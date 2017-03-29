@@ -19,7 +19,7 @@ intro()
 
 rl.on('line', (line) => {
   let input = line.split(' ')
-  //TODO: Add more edge cases for user interaction/catch bad entries.
+  //TODO: Add more edge cases for user interaction & catch bad entries.
   if(input.length === 1 && input[0].toLowerCase() === 'help') {
     process.stdout.write('\u001B[2J\u001B[0;0f')
     process.stdout.write(`HELP
@@ -41,6 +41,7 @@ rl.on('line', (line) => {
     let url = input[0]
     let depth = input[1]
     let collector = []
+    // TODO: collector isn't returning right, no time left to debug.
     crawlToDepth(collector, parseInt(depth), url)
     rl.close()
   }
@@ -76,6 +77,7 @@ function crawlToDepth (collector, depth, url) {
       phoneArray: findPhoneNumbers(response.body), 
       URLArray
     })
+    
     console.log(collector)
     return collector
   })
@@ -87,6 +89,7 @@ function findPhoneNumbers(string) {
   let index = string.search(phoneNum)
   // TODO: Regex isn't quite pulling the numbers out right. Some false positives.
   // I think it's pulling up other serial/id numbers
+  
   if (string[index] === '(') {
     result.push(string.slice(index, index + 14))
   }
