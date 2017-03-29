@@ -1,0 +1,25 @@
+{
+  "name": "hustle_web_crawler",
+  "version": "1.0.0",
+  "description": "A web Crawler",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachel-ftw/hustle_web_crawler.git"
+  },
+  "author": "Rachel Ralston <rachel@rachelralston.com> (http://www.rachelralston.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rachel-ftw/hustle_web_crawler/issues"
+  },
+  "homepage": "https://github.com/rachel-ftw/hustle_web_crawler#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "cheerio": "^0.22.0",
+    "request": "^2.81.0"
+  }
+}
